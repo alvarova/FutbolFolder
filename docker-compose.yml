@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    container_name: futbolfolder-backend
+    ports:
+      - "8000:80"
+    volumes:
+      - backend-data:/var/www/html/data
+  frontend:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+    container_name: futbolfolder-frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+volumes:
+  backend-data:

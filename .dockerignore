@@ -1,0 +1,7 @@
+.git
+.gitignore
+README.md
+LICENSE
+ContextDevelop.md
+docker-compose.yml
+backend/data/cms.json
