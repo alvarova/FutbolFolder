@@ -18,7 +18,22 @@ Plataforma ligera para gestionar piezas publicitarias no tradicionales (PNT), or
 
 ## Puesta en marcha
 
-### 1. Backend PHP
+### Opción A: Docker (recomendada)
+
+1. Asegúrate de tener [Docker](https://docs.docker.com/get-docker/) y [Docker Compose](https://docs.docker.com/compose/install/) instalados.
+2. Desde la raíz del repositorio ejecuta:
+
+   ```bash
+   docker compose up --build
+   ```
+
+3. Accede al frontend en `http://localhost:3000`. La interfaz consumirá automáticamente la API publicada en `http://localhost:8000/api`.
+
+Los datos del CMS se almacenan en un volumen nombrado (`backend-data`), por lo que se preservan entre reinicios de contenedores.
+
+### Opción B: ejecución manual
+
+#### 1. Backend PHP
 
 ```bash
 cd backend
@@ -27,7 +42,7 @@ php -S localhost:8000 index.php
 
 Esto inicia la API REST en `http://localhost:8000/api`.
 
-### 2. Frontend React
+#### 2. Frontend React
 
 En otra terminal:
 
